@@ -63,16 +63,16 @@ else:
 if percent >5 or percent <5:
     with smtplib.SMTP('smtp.gmail.com', 587) as connection:
         connection.starttls()
-        connection.login("sanskritisharma751@gmail.com", "yymf xtuq rrkr emmq")
+        connection.login("ABC@gmail.com", "password")
         msg = MIMEMultipart()
-        msg['From'] = "sanskritisharma751@gmail.com"
-        msg['To'] = "sanskritisharma751@gmail.com"
+        msg['From'] = "ABC@gmail.com"
+        msg['To'] = "ABC@gmail.com"
         msg['Subject'] = f"{COMPANY_NAME}'s stock price"
         body = f"{STOCK}:{symbol} {abs(percent)}%\n{news[0]}\n{news[1]}\n{news[2]}"
         msg.attach(MIMEText(body, 'plain', 'utf-8'))
         connection.sendmail(
-            from_addr="<sanskritisharma751@gmail.com>",
-            to_addrs="<sanskritisharma751@gmail.com>",
+            from_addr="<ABC@gmail.com>",
+            to_addrs="<ABC@gmail.com>",
             msg=msg.as_string()
         )
 
